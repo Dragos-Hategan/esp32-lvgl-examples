@@ -126,6 +126,54 @@ static const lv_buttonmatrix_ctrl_t default_kb_ctrl_uc_map[] = {
     LV_BUTTONMATRIX_CTRL_CHECKED | 2, 6, LV_BUTTONMATRIX_CTRL_CHECKED | 2, LV_KEYBOARD_CTRL_BUTTON_FLAGS | 2
 };
 
+
+
+
+static const char * const default_kb_map_user1[] = {"q", "w", "e", "r", "t", "y", "u", "i", "o", "p", LV_SYMBOL_BACKSPACE, "\n",
+                                                 "ABC", "a", "s", "d", "f", "g", "h", "j", "k", "l", LV_SYMBOL_NEW_LINE, "\n",
+                                                 "_", "-", "z", "x", "c", "v", "b", "n", "m", ".", ",", ":", "\n",
+                                                 LV_SYMBOL_KEYBOARD,
+#if LV_USE_ARABIC_PERSIAN_CHARS == 1
+                                                 "أب",
+#endif
+                                                 LV_SYMBOL_LEFT, " ", LV_SYMBOL_RIGHT, LV_SYMBOL_OK, ""
+                                                };
+
+static const lv_buttonmatrix_ctrl_t default_kb_ctrl_user1_map[] = {
+    LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+    LV_KEYBOARD_CTRL_BUTTON_FLAGS | 6, LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+    LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1),
+    LV_KEYBOARD_CTRL_BUTTON_FLAGS | 2,
+#if LV_USE_ARABIC_PERSIAN_CHARS == 1
+    LV_KEYBOARD_CTRL_BUTTON_FLAGS | 2,
+#endif
+    LV_BUTTONMATRIX_CTRL_CHECKED | 2, 6, LV_BUTTONMATRIX_CTRL_CHECKED | 2, LV_KEYBOARD_CTRL_BUTTON_FLAGS | 2
+};
+
+static const char * const default_kb_map_user2[] = {"Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", LV_SYMBOL_BACKSPACE, "\n",
+                                                 "abc", "A", "S", "D", "F", "G", "H", "J", "K", "L", LV_SYMBOL_NEW_LINE, "\n",
+                                                 "_", "-", "Z", "X", "C", "V", "B", "N", "M", ".", ",", ":", "\n",
+                                                 LV_SYMBOL_CLOSE,
+#if LV_USE_ARABIC_PERSIAN_CHARS == 1
+                                                 "أب",
+#endif
+                                                 LV_SYMBOL_LEFT, " ", LV_SYMBOL_RIGHT, LV_SYMBOL_OK, ""
+                                                };
+
+static const lv_buttonmatrix_ctrl_t default_kb_ctrl_user2_map[] = {
+    LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_KB_BTN(4), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+    LV_KEYBOARD_CTRL_BUTTON_FLAGS | 6, LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_KB_BTN(3), LV_BUTTONMATRIX_CTRL_CHECKED | 7,
+    LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1), LV_BUTTONMATRIX_CTRL_CHECKED | LV_KB_BTN(1),
+    LV_KEYBOARD_CTRL_BUTTON_FLAGS | 2,
+#if LV_USE_ARABIC_PERSIAN_CHARS == 1
+    LV_KEYBOARD_CTRL_BUTTON_FLAGS | 2,
+#endif
+    LV_BUTTONMATRIX_CTRL_CHECKED | 2, 6, LV_BUTTONMATRIX_CTRL_CHECKED | 2, LV_KEYBOARD_CTRL_BUTTON_FLAGS | 2
+};
+
+
+
+
 #if LV_USE_ARABIC_PERSIAN_CHARS == 1
 static const char * const default_kb_map_ar[] = {
     "1#", "ض", "ص", "ث", "ق", "ف", "غ", "ع", "ه", "خ", "ح", "ج", "\n",
@@ -181,8 +229,8 @@ static const char * const * kb_map[10] = {
     default_kb_map_uc,
     default_kb_map_spec,
     default_kb_map_num,
-    default_kb_map_lc,
-    default_kb_map_lc,
+    default_kb_map_user1,
+    default_kb_map_user2,
     default_kb_map_lc,
     default_kb_map_lc,
 #if LV_USE_ARABIC_PERSIAN_CHARS == 1
@@ -195,8 +243,8 @@ static const lv_buttonmatrix_ctrl_t * kb_ctrl[10] = {
     default_kb_ctrl_uc_map,
     default_kb_ctrl_spec_map,
     default_kb_ctrl_num_map,
-    default_kb_ctrl_lc_map,
-    default_kb_ctrl_lc_map,
+    default_kb_ctrl_user1_map,
+    default_kb_ctrl_user2_map,
     default_kb_ctrl_lc_map,
     default_kb_ctrl_lc_map,
 #if LV_USE_ARABIC_PERSIAN_CHARS == 1
@@ -319,8 +367,8 @@ void lv_keyboard_def_event_cb(lv_event_t * e)
     if(txt == NULL) return;
 
     if(lv_strcmp(txt, "abc") == 0) {
-        keyboard->mode = LV_KEYBOARD_MODE_TEXT_LOWER;
-        lv_buttonmatrix_set_map(obj, kb_map[LV_KEYBOARD_MODE_TEXT_LOWER]);
+        keyboard->mode = LV_KEYBOARD_MODE_USER_1;
+        lv_buttonmatrix_set_map(obj, kb_map[LV_KEYBOARD_MODE_USER_1]);
         lv_keyboard_update_ctrl_map(obj);
         return;
     }
@@ -333,8 +381,8 @@ void lv_keyboard_def_event_cb(lv_event_t * e)
     }
 #endif
     else if(lv_strcmp(txt, "ABC") == 0) {
-        keyboard->mode = LV_KEYBOARD_MODE_TEXT_UPPER;
-        lv_buttonmatrix_set_map(obj, kb_map[LV_KEYBOARD_MODE_TEXT_UPPER]);
+        keyboard->mode = LV_KEYBOARD_MODE_USER_2;
+        lv_buttonmatrix_set_map(obj, kb_map[LV_KEYBOARD_MODE_USER_2]);
         lv_keyboard_update_ctrl_map(obj);
         return;
     }
@@ -436,7 +484,7 @@ static void lv_keyboard_constructor(const lv_obj_class_t * class_p, lv_obj_t * o
 
     lv_keyboard_t * keyboard = (lv_keyboard_t *)obj;
     keyboard->ta         = NULL;
-    keyboard->mode       = LV_KEYBOARD_MODE_TEXT_LOWER;
+    keyboard->mode       = LV_KEYBOARD_MODE_USER_1;
     keyboard->popovers   = 0;
 
     lv_obj_align(obj, LV_ALIGN_BOTTOM_MID, 0, 0);
